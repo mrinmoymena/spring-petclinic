@@ -1,0 +1,19 @@
+---
+- hosts: ec2
+  gather_facts: False
+  remote_user: ubuntu
+
+  tasks:
+    - name: ping
+      ping:
+    - name: Re-create a test container
+      docker_container:
+      name: petclinic
+      image: demoapp2020/spring-petclinic:"{{ version }}
+      command: spring-petclinic --appendonly yes
+      state: 
+      recreate: yes
+      exposed_ports:
+      - 9080
+      published_ports:
+      - 8080  
