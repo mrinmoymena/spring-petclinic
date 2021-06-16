@@ -1,0 +1,5 @@
+[ec2:vars]
+ansible_ssh_private_key_file = /home/ubuntu/ec2ubuntu.pem
+
+[ec2]
+172.20.20.199 dashboard_domain=ip-172-20-20-199.ap-south-1.compute.internal
